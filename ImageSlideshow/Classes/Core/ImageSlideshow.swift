@@ -192,7 +192,7 @@ open class ImageSlideshow: UIView {
     }
 
     /// Image preload configuration, can be set to .fixed to enable lazy load or .all
-    open var preload = .fixed(offset: 2)
+    open var preload = ImagePreload.fixed(offset: 2)
 
     /// Content mode of each image in the slideshow
     open var contentScaleMode: UIViewContentMode = UIViewContentMode.scaleAspectFit {
@@ -541,7 +541,7 @@ open class ImageSlideshow: UIView {
 
         fullscreen.slideshow.pageIndicator = nil
         fullscreen.zoomEnabled = true
-        fullscreen.maximumScale = 5
+        fullscreen.slideshow.maximumScale = 5
         fullscreen.initialPage = currentPage
         fullscreen.inputs = images
         slideshowTransitioningDelegate = ZoomAnimatedTransitioningDelegate(slideshowView: self, slideshowController: fullscreen)
