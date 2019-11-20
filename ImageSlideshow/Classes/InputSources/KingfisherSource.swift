@@ -67,5 +67,6 @@ public class KingfisherSource: NSObject, InputSource {
     /// - Parameter imageView: UIImage view with the download task that should be canceled
     public func cancelLoad(on imageView: UIImageView) {
         imageView.kf.cancelDownloadTask()
+        imageView.image = nil
     }
 }
